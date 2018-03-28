@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Easy Poll</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="party_selection">Party</string>
+    <string name="state_selection">State</string>
+    <string name="election_year">Election Year</string>
+    <string name="register_button">Register</string>
+</resources>
