@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.jfarina.gamesystem720.HomePageActivityController">
+
+    <ImageView
+        android:id="@+id/user_image"
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="8dp"
+        android:background="#ffffff"
+        android:contentDescription="@string/welcome_user_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_avatar" />
+
+    <TextView
+        android:id="@+id/welcome_txt"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="142dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/welcome_user_txt"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_image" />
+
+    <Button
+        android:id="@+id/profile_settings__button"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="114dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/profile_settings_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/notifications_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/user_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/notifications_button"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/notifications_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_txt" />
+
+    <Button
+        android:id="@+id/friends_and_messages_button"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/friends_and_messages_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notifications_button" />
+
+    <Button
+        android:id="@+id/videos_and_movies_button"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/videos_and_movies_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_button" />
+
+    <Button
+        android:id="@+id/game_button"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/game_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friends_and_messages_button" />
+
+    <Button
+        android:id="@+id/store_button"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/store_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videos_and_movies_button" />
+
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/settings_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/store_button" />
+
+    <Button
+        android:id="@+id/power_off_button"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="108dp"
+        android:text="@string/power_off_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/notifications_button"
+        app:layout_constraintEnd_toStartOf="@+id/restart_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/restart_button"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/restart_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/notifications_button"
+        app:layout_constraintEnd_toStartOf="@+id/switch_user_button"
+        app:layout_constraintStart_toEndOf="@+id/power_off_button"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_txt" />
+
+    <Button
+        android:id="@+id/switch_user_button"
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/switch_user_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/notifications_button"
+        app:layout_constraintEnd_toStartOf="@+id/logout_button"
+        app:layout_constraintStart_toEndOf="@+id/restart_button"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_txt" />
+
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="63dp"
+        android:text="@string/logout_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/notifications_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/switch_user_button"
+        app:layout_constraintTop_toBottomOf="@+id/profile_settings__button"
+        app:layout_constraintVertical_bias="1.0" />
+</android.support.constraint.ConstraintLayout>
+</ScrollView>

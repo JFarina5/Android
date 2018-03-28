@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Game System 720</string>
+    <string name="power_options_button">Power Options</string>
+    <string name="game_system_title">Game System 720</string>
+
+    <string name="sign_in_button">Sign In</string>
+    <string name="current_user_login_screen_txt">Current User Login</string>
+    <string name="add_txt_hint">Username</string>
+    <string name="password_txt_hint">Password</string>
+    <string name="user_login_button">Login</string>
+
+    <string name="create_user_account">Create Account</string>
+    <string name="back_button">Back</string>
+    <string name="create_account_txt">Create Account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="new_username">Username</string>
+    <string name="add_email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_button">Create</string>
+
+    <string name="welcome_user_txt">Welcome</string>
+    <string name="user_txt_hint">Username</string>
+    <string name="profile_settings_button">View Profile</string>
+    <string name="settings_button">Settings</string>
+    <string name="power_off_button">Power Off</string>
+    <string name="restart_button">Restart</string>
+    <string name="switch_user_button">Switch User</string>
+    <string name="logout_button">Sign Out</string>
+    <string name="notifications_button">Notifications</string>
+    <string name="friends_and_messages_button">Friends and Messages</string>
+    <string name="game_button">Game</string>
+    <string name="videos_and_movies_button">Videos and Movies</string>
+    <string name="store_button">Store</string>
+
+    <string name="friends_and_messages_txt">Friends and Messages</string>
+    <string name="home_button">Home</string>
+    <string name="friends_button">Friends</string>
+    <string name="messages_button">Messages</string>
+
+    <string name="store_title_txt">Store</string>
+    <string name="search_games_button">Search Games</string>
+    <string name="search_movies_button">Search Movies</string>
+    <string name="search_tv_shows_button">Search TV Shows</string>
+    <string name="search_applications_button">Search Applications</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.example.jfarina.gamesystem720.login.activities.HomeActivityController">
+
+    <TextView
+        android:id="@+id/game_system_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="370dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/game_system_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/create_user_button"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/create_user_account"
+        android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_system_title" />
+
+    <Button
+        android:id="@+id/sign_in_button"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/sign_in_button"
+        android:textAppearance="@style/TextAppearance.AppCompat.Menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_user_button" />
+
+</android.support.constraint.ConstraintLayout>
