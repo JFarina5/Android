@@ -20,31 +20,171 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".friends.messages.activities.FriendsActivityController"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".login.activities.HomeActivityController"
             android:screenOrientation="portrait" />
         <activity
             android:name=".login.activities.AddUserActivityController"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".login.activities.HomeActivityController"/>
+            android:label="@string/create_account_txt"
+            android:parentActivityName=".login.activities.HomeActivityController"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jfarina.gamesystem720.login.activities.HomeActivityController"/>
+                android:value="com.example.jfarina.gamesystem720.login.activities.HomeActivityController" />
+        </activity>
         <activity
             android:name=".login.activities.SignInActivityController"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".login.activities.HomeActivityController"/>
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.jfarina.gamesystem720.login.activities.HomeActivityController"/>
-        <activity
-            android:name=".store.activities.StoreActivityController"
-            android:screenOrientation="portrait" />
+            android:label="@string/current_user_login_screen_txt"
+            android:parentActivityName=".login.activities.HomeActivityController"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.jfarina.gamesystem720.login.activities.HomeActivityController" />
+        </activity>
         <activity
             android:name=".HomePageActivityController"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewProfileActivity"
+            android:label="@string/profile_page"
+            android:parentActivityName=".HomePageActivityController"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivityController" />
+        </activity>
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/notifications_button"
+            android:parentActivityName=".HomePageActivityController"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivityController" />
+        </activity>
+        <activity
+            android:name=".friends.messages.activities.FriendsActivityController"
+            android:label="@string/friends_button"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivityController" />
+        </activity>
+        <activity
+            android:name=".GameActivity"
+            android:label="@string/game_button"
+            android:parentActivityName=".HomePageActivityController"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivityController" />
+        </activity>
+        <activity
+            android:name=".video.activities.VideoActivity"
+            android:label="@string/videos_and_movies_button"
+            android:parentActivityName=".HomePageActivityController"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivityController" />
+        </activity>
+        <activity
+            android:name=".store.activities.StoreActivityController"
+            android:label="@string/store_button"
+            android:parentActivityName=".HomePageActivityController"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivityController" />
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings_button"
+            android:parentActivityName=".HomePageActivityController"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivityController" />
+        </activity>
+        <activity
+            android:name=".friends.messages.activities.MessagesActivity"
+            android:label="@string/messages_button"
+            android:parentActivityName=".HomePageActivityController"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivityController" />
+        </activity>
+        <activity
+            android:name=".friends.messages.activities.ComposeMessageActivity"
+            android:label="@string/compose_message_screen"
+            android:parentActivityName=".friends.messages.activities.MessagesActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".friends.messages.activities.MessagesActivity" />
+        </activity>
+        <activity
+            android:name=".video.activities.MoviesActivity"
+            android:label="@string/movies_button"
+            android:parentActivityName=".video.activities.VideoActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".video.activities.VideoActivity" />
+        </activity>
+        <activity
+            android:name=".video.activities.VideosPageActivity"
+            android:label="@string/videos_button"
+            android:parentActivityName=".video.activities.VideoActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".video.activities.VideoActivity" />
+        </activity>
+        <activity
+            android:name=".video.activities.TVShowsActivity"
+            android:label="@string/tv_shows_button"
+            android:parentActivityName=".video.activities.VideoActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".video.activities.VideoActivity" />
+        </activity>
+
+        <activity android:name=".store.activities.StoreGamesActivity"
+            android:label="@string/store_games"
+            android:parentActivityName=".store.activities.StoreActivityController"
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".store.activities.StoreActivityController" />
+        </activity>
+
+        <activity android:name=".store.activities.StoreMoviesActivity"
+            android:label="@string/store_movies"
+            android:parentActivityName=".store.activities.StoreActivityController"
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".store.activities.StoreActivityController" />
+        </activity>
+        <activity android:name=".store.activities.StoreTVActivity"
+            android:label="@string/store_tv_shows"
+            android:parentActivityName=".store.activities.StoreActivityController"
+            android:screenOrientation="portrait">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".store.activities.StoreActivityController" />
+        </activity>
+
+        <activity android:name=".store.activities.StoreApplicationsActivity"
+            android:label="@string/store_applications"
+            android:parentActivityName=".store.activities.StoreActivityController"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".store.activities.StoreActivityController" />
+        </activity>
     </application>
 
 </manifest>

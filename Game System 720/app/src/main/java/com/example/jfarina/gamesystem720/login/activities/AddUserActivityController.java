@@ -34,6 +34,7 @@ public class AddUserActivityController extends AppCompatActivity {
             }
         });
     }
+
     public void register(){
         initialize();
         if(!validate()){
@@ -43,6 +44,7 @@ public class AddUserActivityController extends AppCompatActivity {
             onSignupSuccess();
         }
     }
+
     public void onSignupSuccess(){
         Toast.makeText(getBaseContext(), "User account: " + user + ", created." , Toast.LENGTH_SHORT ).show();
     }
@@ -60,7 +62,6 @@ public class AddUserActivityController extends AppCompatActivity {
         if(dateOfBirth.length() == 0){
             dateOfBirth.setError("Please enter your date of birth.");
             valid = false;
-
         }
         if(username.length() == 0){
             username.setError("Please enter a username.");

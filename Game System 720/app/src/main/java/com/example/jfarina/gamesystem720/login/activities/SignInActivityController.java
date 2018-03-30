@@ -16,11 +16,13 @@ public class SignInActivityController extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
     }
 
     public void touchLogin(View view) {
         EditText username = findViewById(R.id.username_txt);
         EditText password = findViewById(R.id.password_txt);
+
         if(username.getText().toString().equals("player") &&
                 password.getText().toString().equals("password"))
         {

@@ -23,25 +23,43 @@
     <string name="welcome_user_txt">Welcome</string>
     <string name="user_txt_hint">Username</string>
     <string name="profile_settings_button">View Profile</string>
+    <string name="profile_page">Profile</string>
     <string name="settings_button">Settings</string>
     <string name="power_off_button">Power Off</string>
     <string name="restart_button">Restart</string>
     <string name="switch_user_button">Switch User</string>
     <string name="logout_button">Sign Out</string>
-    <string name="notifications_button">Notifications</string>
-    <string name="friends_and_messages_button">Friends and Messages</string>
-    <string name="game_button">Game</string>
-    <string name="videos_and_movies_button">Videos and Movies</string>
-    <string name="store_button">Store</string>
 
-    <string name="friends_and_messages_txt">Friends and Messages</string>
-    <string name="home_button">Home</string>
+    <string name="notifications_button">Notifications</string>
+    <string name="empty_list">Nothing here&#8230;\nCheck back soon!</string>
+    <string name="game_button">Game</string>
+    <string name="store_button">GS Store</string>
+
+    <string name="friends_and_messages_button">Friends and Messages</string>
+    <string name="friends_empty">No friends found&#8230;\n Add friends to appear here!</string>
     <string name="friends_button">Friends</string>
     <string name="messages_button">Messages</string>
+    <string name="compose_new_message">Compose</string>
+    <string name="messages_empty">Inbox Empty</string>
+    <string name="compose_message_screen">Compose Message</string>
+    <string name="send_button">Send</string>
+
+    <string name="videos_and_movies_button">GS Video</string>
+    <string name="videos_button">Videos</string>
+    <string name="movies_button">Movies</string>
+    <string name="tv_shows_button">TV Shows</string>
+
 
     <string name="store_title_txt">Store</string>
     <string name="search_games_button">Search Games</string>
     <string name="search_movies_button">Search Movies</string>
     <string name="search_tv_shows_button">Search TV Shows</string>
     <string name="search_applications_button">Search Applications</string>
+    <string name="store_games">Store: Games</string>
+    <string name="store_movies">Store: Movies</string>
+    <string name="store_tv_shows">Store: TV Shows</string>
+    <string name="store_applications">Store: Applications</string>
+
+
+    <string name="placeholder">Placeholder</string>
 </resources>
