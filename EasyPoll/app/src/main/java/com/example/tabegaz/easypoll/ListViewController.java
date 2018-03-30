@@ -12,15 +12,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class ListViewController extends AppCompatActivity {
-    ArrayList<String> candidateList = new ArrayList<String>();
+    ArrayList<String> candidateList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         PollModel poll = new PollModel(this);
         setContentView(R.layout.activity_list_view);
+
         candidateList = poll.getName();
        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, candidateList);
-        ListView listView = (ListView) findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
@@ -28,7 +29,6 @@ public class ListViewController extends AppCompatActivity {
            // that it could be any of them. This is called generics in Java.
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 Toast.makeText(ListViewController.this, candidateList.get(position).toString(),  Toast.LENGTH_LONG).show();
                 //The intent is created inside another class, here an anonymous inner class OnClickListener. Thus this does not refer the instance of your Activity
                 // (or Context) as intended but the instance of your anonymous inner class OnClickListener
