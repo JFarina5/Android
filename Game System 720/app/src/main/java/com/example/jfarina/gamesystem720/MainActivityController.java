@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.jfarina.gamesystem720.login.activities.HomeActivityController;
+import com.example.jfarina.gamesystem720.login.activities.SignInActivityController;
 
 public class MainActivityController extends AppCompatActivity {
     private static int LAUNCH_TIME_OUT = 4000;
@@ -17,7 +17,7 @@ public class MainActivityController extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){
-                Intent homeIntent = new Intent (MainActivityController.this, HomeActivityController.class);
+                Intent homeIntent = new Intent (MainActivityController.this, SignInActivityController.class);
                 startActivity(homeIntent);
                 finish();
             }

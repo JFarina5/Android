@@ -20,26 +20,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login.activities.HomeActivityController"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".login.activities.AddUserActivityController"
             android:label="@string/create_account_txt"
-            android:parentActivityName=".login.activities.HomeActivityController"
+            android:parentActivityName=".login.activities.SignInActivityController"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jfarina.gamesystem720.login.activities.HomeActivityController" />
+                android:value="com.example.jfarina.gamesystem720.login.activities.SignInActivityController" />
         </activity>
         <activity
             android:name=".login.activities.SignInActivityController"
-            android:label="@string/current_user_login_screen_txt"
-            android:parentActivityName=".login.activities.HomeActivityController"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.jfarina.gamesystem720.login.activities.HomeActivityController" />
-        </activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".HomePageActivityController"
             android:screenOrientation="portrait" />
@@ -70,15 +62,6 @@
                 android:value=".HomePageActivityController" />
         </activity>
         <activity
-            android:name=".GameActivity"
-            android:label="@string/game_button"
-            android:parentActivityName=".HomePageActivityController"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomePageActivityController" />
-        </activity>
-        <activity
             android:name=".video.activities.VideoActivity"
             android:label="@string/videos_and_movies_button"
             android:parentActivityName=".HomePageActivityController"
@@ -90,15 +73,6 @@
         <activity
             android:name=".store.activities.StoreActivityController"
             android:label="@string/store_button"
-            android:parentActivityName=".HomePageActivityController"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomePageActivityController" />
-        </activity>
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/settings_button"
             android:parentActivityName=".HomePageActivityController"
             android:screenOrientation="portrait">
             <meta-data
@@ -150,34 +124,35 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".video.activities.VideoActivity" />
         </activity>
-
-        <activity android:name=".store.activities.StoreGamesActivity"
+        <activity
+            android:name=".store.activities.StoreGamesActivity"
             android:label="@string/store_games"
             android:parentActivityName=".store.activities.StoreActivityController"
             android:screenOrientation="portrait">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".store.activities.StoreActivityController" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".store.activities.StoreActivityController" />
         </activity>
-
-        <activity android:name=".store.activities.StoreMoviesActivity"
+        <activity
+            android:name=".store.activities.StoreMoviesActivity"
             android:label="@string/store_movies"
             android:parentActivityName=".store.activities.StoreActivityController"
             android:screenOrientation="portrait">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".store.activities.StoreActivityController" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".store.activities.StoreActivityController" />
         </activity>
-        <activity android:name=".store.activities.StoreTVActivity"
+        <activity
+            android:name=".store.activities.StoreTVActivity"
             android:label="@string/store_tv_shows"
             android:parentActivityName=".store.activities.StoreActivityController"
             android:screenOrientation="portrait">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".store.activities.StoreActivityController" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".store.activities.StoreActivityController" />
         </activity>
-
-        <activity android:name=".store.activities.StoreApplicationsActivity"
+        <activity
+            android:name=".store.activities.StoreApplicationsActivity"
             android:label="@string/store_applications"
             android:parentActivityName=".store.activities.StoreActivityController"
             android:screenOrientation="portrait">
@@ -185,6 +160,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".store.activities.StoreActivityController" />
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>

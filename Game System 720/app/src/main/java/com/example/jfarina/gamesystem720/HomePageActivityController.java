@@ -9,17 +9,21 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.jfarina.gamesystem720.friends.messages.activities.FriendsActivityController;
-import com.example.jfarina.gamesystem720.login.activities.HomeActivityController;
+import com.example.jfarina.gamesystem720.login.activities.SignInActivityController;
+import com.example.jfarina.gamesystem720.model.and.db.directory.DatabaseHandler;
 import com.example.jfarina.gamesystem720.store.activities.StoreActivityController;
 import com.example.jfarina.gamesystem720.video.activities.VideoActivity;
 
 
 public class HomePageActivityController extends AppCompatActivity {
+DatabaseHandler databaseHandler = new DatabaseHandler(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
 
         Button touchSignOut = findViewById(R.id.logout_button);
         touchSignOut.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +35,7 @@ public class HomePageActivityController extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //if user pressed "yes", then he/she is allowed to exit from application
-                        Intent myIntent = new Intent(getApplicationContext(), HomeActivityController.class);
+                        Intent myIntent = new Intent(getApplicationContext(), SignInActivityController.class);
                         myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(myIntent);
                     }
@@ -73,14 +77,6 @@ public class HomePageActivityController extends AppCompatActivity {
             }
         });
 
-        Button touchGame = findViewById(R.id.game_button);
-        touchGame.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GameActivity.class);
-                startActivityForResult(myIntent, 0);
-            }
-        });
-
         Button touchVideo = findViewById(R.id.videos_and_movies_button);
         touchVideo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -115,7 +111,7 @@ public class HomePageActivityController extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //if user pressed "yes", then he/she is allowed to exit from application
-                Intent myIntent = new Intent(getApplicationContext(), HomeActivityController.class);
+                Intent myIntent = new Intent(getApplicationContext(), SignInActivityController.class);
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(myIntent);
             }
