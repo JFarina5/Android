@@ -25,18 +25,6 @@ public class MedModel {
     }
 
     public MedModel(){
-
-    }
-
-    public MedModel(String medName, String notes, String dosage, String initialAmount,
-                    int frequency, int numDays) {
-        this.medName = medName;
-        this.notes = notes;
-        this.dosage = dosage;
-        this.initialAmount = initialAmount;
-        this.frequency = frequency;
-        this.numDays = numDays;
-
     }
 
     public void setMedName(String medName) {

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -19,23 +20,23 @@ public class AddMedicationActivityController extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_medication);
-    }
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-   public void touchAddMedication(View view) {
+    }
+    public void touchAddMedication(View view) {
         MedModel medModel = new MedModel();
         DatabaseHandler databaseHandler = new DatabaseHandler(this);
         EditText txtMedicationName = findViewById(R.id.txtMedicationName);
-        EditText txtFrequency = findViewById(R.id.txtFrequency);
-        EditText txtHowManyDays = findViewById(R.id.txtHowManyDays);
-        EditText txtNotes = findViewById(R.id.txtNotes);
-        EditText txtDosage = findViewById(R.id.txtDosage);
-        EditText txtInitial = findViewById(R.id.txtInitial);
+        EditText txtFrequency =  findViewById(R.id.txtFrequency);
+        EditText txtHowManyDays =  findViewById(R.id.txtHowManyDays);
+        EditText txtNotes =  findViewById(R.id.txtNotes);
+        EditText txtDosage =  findViewById(R.id.txtDosage);
         medModel.setMedName(txtMedicationName.getText().toString());
         medModel.setFrequency(Integer.parseInt(txtFrequency.getText().toString()));
         medModel.setNumDays(Integer.parseInt(txtHowManyDays.getText().toString()));
         medModel.setNotes(txtNotes.getText().toString());
         medModel.setDosage(txtDosage.getText().toString());
-        medModel.setInitialAmount(txtInitial.getText().toString());
+
         Boolean isAdded = databaseHandler.insertMed(medModel);
         if (isAdded) {
             Toast.makeText(AddMedicationActivityController.this, "Medication is registered successfully", Toast.LENGTH_LONG).show();

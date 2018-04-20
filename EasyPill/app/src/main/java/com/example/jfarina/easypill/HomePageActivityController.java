@@ -4,12 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,10 +13,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.jfarina.easypill.login.activity.controllers.LoginActivityController;
 import com.example.jfarina.easypill.model.and.db.directory.DatabaseHandler;
@@ -62,29 +55,29 @@ public class HomePageActivityController extends AppCompatActivity
         final ArrayList<String> medicationName = new ArrayList<>();
         DatabaseHandler dbHandler = new DatabaseHandler(this);
         final List<MedModel> medicationList = dbHandler.getAllMedications();
-        for(MedModel med:  medicationList)
-        {
-            medicationName.add(med.getMedName() + " " +
-                    med.getFrequency() + " " +
-                    med.getNumDays() + " " +
-                    med.getNotes() + " " +
-                    med.getDosage() + " " +
-                    med.getInitialAmount());
-            //
+        for (MedModel med : medicationList) {
+            medicationName.add
+                    ("Medication Name: " + med.getMedName() + " \n" +
+                            "Frequency: " + med.getFrequency() + " per day\n" +
+                            "Number of Days: " + med.getNumDays() + " \n" +
+                            "Notes: " + med.getNotes() + " \n" +
+                            "Dosage: " + med.getDosage());
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, medicationName);
-        ListView listView = (ListView) findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.listView);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+
+        /*
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             //The AdapterView could be a ListView, GridView, Spinner, etc. The question mark inside the angle brackets indicates
             // that it could be any of them. This is called generics in Java.
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(HomePageActivityController.this, medicationList.get(position).toString(),  Toast.LENGTH_LONG).show();
+                Toast.makeText(HomePageActivityController.this, medicationList.get(position).toString(), Toast.LENGTH_LONG).show();
             }
         });
+        */
 
     }
 
@@ -106,7 +99,7 @@ public class HomePageActivityController extends AppCompatActivity
                     startActivity(myIntent);
                 }
             });
-            builder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     //if user select "No", just cancel this dialog and continue with app
@@ -114,7 +107,7 @@ public class HomePageActivityController extends AppCompatActivity
                 }
             });
 
-            AlertDialog alert=builder.create();
+            AlertDialog alert = builder.create();
             alert.show();
         }
     }
@@ -126,10 +119,13 @@ public class HomePageActivityController extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
+            Intent intent = new Intent(this, HomePageActivityController.class);
+            startActivity(intent);
             setTitle("Home");
 
         } else if (id == R.id.nav_history) {
-            setTitle("Medication History");
+            Intent intent = new Intent(this, MedicationHistoryActivityController.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -144,7 +140,7 @@ public class HomePageActivityController extends AppCompatActivity
                     startActivity(myIntent);
                 }
             });
-            builder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     //if user select "No", just cancel this dialog and continue with app
@@ -152,9 +148,11 @@ public class HomePageActivityController extends AppCompatActivity
                 }
             });
 
-            AlertDialog alert=builder.create();
+            AlertDialog alert = builder.create();
             alert.show();
         }
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

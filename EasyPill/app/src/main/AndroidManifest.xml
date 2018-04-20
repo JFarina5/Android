@@ -16,7 +16,6 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -39,6 +38,13 @@
         <activity
             android:name=".AddMedicationActivityController"
             android:label="@string/navigation_add">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomePageActivityController" />
+        </activity>
+
+        <activity android:name=".MedicationHistoryActivityController"
+            android:label="@string/medication_history_button">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomePageActivityController" />

@@ -16,16 +16,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Database Name
     private static final String DATABASE_NAME = "ePillDB";
     // Database Version
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 3;
     // Table Names
     private static final String TABLE_MEDICATION = "Medication";
     private static final String TABLE_USER = "user";
     //  create  Tables for medication and user
-    String CREATE_TABLE_MEDICATION = "CREATE TABLE "  + TABLE_MEDICATION  +
-            " (MEDICATIONID INTEGER PRIMARY KEY AUTOINCREMENT, MEDNAME TEXT, FREQUENCY TEXT, " +
+    private static final String CREATE_TABLE_MEDICATION = "CREATE TABLE "  + TABLE_MEDICATION+
+            "(MEDICATIONID INTEGER PRIMARY KEY AUTOINCREMENT, MEDNAME TEXT, FREQUENCY TEXT, " +
             " NUMDAYS INTEGER, NOTES TEXT, DOSAGE TEXT, INITIALAMOUNT TEXT)";
 
-    String CREATE_TABLE_USER = "CREATE TABLE "  + TABLE_USER+
+    private static final String CREATE_TABLE_USER = "CREATE TABLE "  + TABLE_USER+
             "(USERID INTEGER PRIMARY KEY AUTOINCREMENT, FIRSTNAME TEXT, LASTNAME TEXT, " +
             "EMAIL TEXT, PASSWORD TEXT)";
 
@@ -39,6 +39,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // creating required tables
         sqLiteDatabase.execSQL(CREATE_TABLE_MEDICATION);
         sqLiteDatabase.execSQL(CREATE_TABLE_USER);
+
+        String SQL_CREATE_MEDICATION_TABLE =  "CREATE TABLE " + MedReminderContract.MedReminderEntry.TABLE_NAME + " ("
+                + MedReminderContract.MedReminderEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + MedReminderContract.MedReminderEntry.KEY_TITLE + " TEXT NOT NULL, "
+                + MedReminderContract.MedReminderEntry.KEY_DATE + " TEXT NOT NULL, "
+                + MedReminderContract.MedReminderEntry.KEY_TIME + " TEXT NOT NULL, "
+                + MedReminderContract.MedReminderEntry.KEY_REPEAT + " TEXT NOT NULL, "
+                + MedReminderContract.MedReminderEntry.KEY_REPEAT_NO + " TEXT NOT NULL, "
+                + MedReminderContract.MedReminderEntry.KEY_REPEAT_TYPE + " TEXT NOT NULL, "
+                + MedReminderContract.MedReminderEntry.KEY_ACTIVE + " TEXT NOT NULL " + " );";
+
+        sqLiteDatabase.execSQL(SQL_CREATE_MEDICATION_TABLE);
     }
 
     @Override
@@ -60,7 +72,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put("FREQUENCY", medModel.getFrequency());
         values.put("NOTES", medModel.getNotes());
         values.put("DOSAGE",medModel.getDosage());
-        values.put("INITIALAMOUNT",medModel.getInitialAmount());
         values.put("NUMDAYS",medModel.getNumDays());
 
         // insert row
@@ -94,7 +105,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public List<MedModel> getAllMedications() {
         List<MedModel> medList = new ArrayList<MedModel>();
-        String selectQuery = "SELECT  * FROM " + TABLE_MEDICATION;
+        String selectQuery = "SELECT * FROM " + TABLE_MEDICATION;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor resultSet = db.rawQuery(selectQuery, null);
 
@@ -107,7 +118,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 medModel.setFrequency((resultSet.getInt(resultSet.getColumnIndex("FREQUENCY"))));
                 medModel.setNotes((resultSet.getString(resultSet.getColumnIndex("NOTES"))));
                 medModel.setDosage((resultSet.getString(resultSet.getColumnIndex("DOSAGE"))));
-                medModel.setInitialAmount((resultSet.getString(resultSet.getColumnIndex("INITALAMOUNT"))));
                 medModel.setNumDays((resultSet.getInt(resultSet.getColumnIndex("NUMDAYS"))));
 
                 // adding to poll list
@@ -126,7 +136,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put("FREQUENCY", medModel.getFrequency());
         values.put("NOTES", medModel.getNotes());
         values.put("DOSAGE", medModel.getDosage());
-        values.put("INITIALAMOUNT", medModel.getInitialAmount());
         values.put("NUMDAYS", medModel.getNumDays());
         // updating row
         return db.update(TABLE_MEDICATION, values, "MEDICATIONID" + " = ?",

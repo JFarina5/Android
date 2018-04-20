@@ -30,6 +30,44 @@
     <string name="medication_dosage">Dosage</string>
     <string name="medication_initial_dosage">Initial Dosage</string>
     <string name="medicaiton_add_button">Add Medication</string>
+    <string name="medication_history_button">Medication History</string>
+
+    <string name="empty_list">Click on the button below to begin!</string>
+
+    <string name="add_medication">Medication</string>
+    <string name="details">Details</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="repeat">Repeat</string>
+    <string name="repeat_off">Off</string>
+    <string name="repeat_no">Repetition Interval </string>
+    <string name="repeat_type">Type of Repetitions</string>
+
+    <string name="action_discard_medication">Discard Medication</string>
+    <string name="action_save_medication">Save Reminder</string>
+
+    <string name="editor_activity_title_new_medication">Add Medication Details</string>
+    <string name="editor_activity_title_edit_medication">Edit Medication</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discard</string>
+
+    <string name="keep_editing">Keep Editing</string>
+    <string name="delete_dialog_msg">Delete this Medication?</string>
+
+    <string name="delete">Delete</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="editor_delete_medication_successful">Medication deleted</string>
+
+    <string name="editor_delete_medication_failed">Error with deleting medication</string>
+
+    <string name="editor_insert_medication_successful">Medication saved</string>
+
+    <string name="editor_insert_medication_failed">Error with saving medication</string>
+
+    <string name="editor_update_medication_successful">medication updated</string>
+
+    <string name="editor_update_medication_failed">Error with updating medication</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
